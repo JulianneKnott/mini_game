@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PhF-w7-wba">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mini_game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,189 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x0Z-ux-LAe">
+                                <rect key="frame" x="226" y="348" width="149" height="29"/>
+                                <segments>
+                                    <segment title="Feed"/>
+                                    <segment title="Clean"/>
+                                    <segment title="Pet"/>
+                                </segments>
+                                <connections>
+                                    <action selector="taskWasSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="efB-MW-tS7"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Care For Your Dinosaurs!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyN-BE-1rf">
+                                <rect key="frame" x="209" y="89" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVD-WC-wpO">
+                                <rect key="frame" x="285" y="392" width="30" height="30"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <segue destination="qy2-B9-4de" kind="show" id="E8w-Sw-xhN"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nz-Qw-Rdo">
+                                <rect key="frame" x="180" y="158" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purpleDino" translatesAutoresizingMaskIntoConstraints="NO" id="uJe-cC-q2u">
+                                        <rect key="frame" x="131" y="17" width="101" height="93"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenDino" translatesAutoresizingMaskIntoConstraints="NO" id="i9B-YS-548">
+                                        <rect key="frame" x="8" y="17" width="101" height="93"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bdk-9b-Xn6" appends="YES" id="Fog-bS-HFU"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Choose a Dinosaur:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBe-He-djX">
+                                <rect key="frame" x="229" y="129" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Choose a Task:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kF-KK-JvH">
+                                <rect key="frame" x="246" y="309" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8nz-Qw-Rdo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4My-jV-baj"/>
+                            <constraint firstItem="x0Z-ux-LAe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J4w-O5-aXc"/>
+                            <constraint firstItem="mBe-He-djX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NEJ-wu-nsu"/>
+                            <constraint firstItem="MVD-WC-wpO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VzV-Da-PDU"/>
+                            <constraint firstItem="0kF-KK-JvH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WO3-En-NiG"/>
+                            <constraint firstItem="yyN-BE-1rf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p09-QS-mSZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iGb-am-xam"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="8nz-Qw-Rdo" id="QDN-2B-Fb6"/>
+                        <outlet property="greenDino" destination="i9B-YS-548" id="MHs-Nt-ztP"/>
+                        <outlet property="purpleDino" destination="uJe-cC-q2u" id="Y3e-bN-IwJ"/>
+                        <outlet property="taskSelector" destination="x0Z-ux-LAe" id="wwS-BL-TUE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bdk-9b-Xn6">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="screenWasTapped:" destination="BYZ-38-t0r" id="KnC-zr-EtD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1117" y="399"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="iM3-03-XEx">
+            <objects>
+                <viewController id="qy2-B9-4de" customClass="SecondViewController" customModule="mini_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hco-4u-NIL"/>
+                        <viewControllerLayoutGuide type="bottom" id="WwZ-yL-aYx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1mS-qr-3jY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwF-9y-vO8">
+                                <rect key="frame" x="150" y="94" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQt-9q-MNI">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Eb-3d-SFG">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="748-em-Z5u" appends="YES" id="iJr-Ab-4jg"/>
+                                            <outletCollection property="gestureRecognizers" destination="hdt-T4-I7n" appends="YES" id="haf-0j-Uc8"/>
+                                            <outletCollection property="gestureRecognizers" destination="kJ8-3A-Wnc" appends="YES" id="Bwl-3y-u0Z"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51U-Hz-h8r">
+                                <rect key="frame" x="150" y="478" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="BwF-9y-vO8" firstAttribute="centerX" secondItem="1mS-qr-3jY" secondAttribute="centerX" id="43c-H8-NuN"/>
+                            <constraint firstItem="51U-Hz-h8r" firstAttribute="centerX" secondItem="1mS-qr-3jY" secondAttribute="centerX" id="B4E-6T-7hJ"/>
+                            <constraint firstItem="RQt-9q-MNI" firstAttribute="centerX" secondItem="1mS-qr-3jY" secondAttribute="centerX" id="tLA-jf-ZL4"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kJ8-3A-Wnc" appends="YES" id="gay-xN-ebK"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="RQt-9q-MNI" id="Vi6-XG-Odh"/>
+                        <outlet property="dinoPic" destination="0Eb-3d-SFG" id="Q3c-Lt-OxS"/>
+                        <outlet property="directionsLabel" destination="51U-Hz-h8r" id="lIh-Fv-ZID"/>
+                        <outlet property="taskLabel" destination="BwF-9y-vO8" id="jdf-DQ-22Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1z0-t5-YQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="748-em-Z5u">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="dinoWasPetted:" destination="qy2-B9-4de" id="1l3-CW-4Tq"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <rotationGestureRecognizer id="hdt-T4-I7n">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="dinoWasCleaned:" destination="qy2-B9-4de" id="iYd-Yr-iFq"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <tapGestureRecognizer id="kJ8-3A-Wnc">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="dinoWasFed:" destination="qy2-B9-4de" id="eqW-2m-GcH"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1755" y="420"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="t9Z-Id-PpL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PhF-w7-wba" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="okX-Mk-8B3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KYD-98-bHV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddQ-b6-K08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="greenDino" width="640" height="558"/>
+        <image name="purpleDino" width="640" height="392"/>
+    </resources>
 </document>

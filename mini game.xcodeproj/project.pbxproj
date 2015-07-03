@@ -14,6 +14,7 @@
 		DA588D351B46DAA800949829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA588D331B46DAA800949829 /* LaunchScreen.storyboard */; };
 		DA588D401B46DAA800949829 /* mini_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA588D3F1B46DAA800949829 /* mini_gameTests.swift */; };
 		DA588D4B1B46DAA800949829 /* mini_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA588D4A1B46DAA800949829 /* mini_gameUITests.swift */; };
+		DA588D591B46EA5700949829 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA588D581B46EA5700949829 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DA588D461B46DAA800949829 /* mini gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mini gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA588D4A1B46DAA800949829 /* mini_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mini_gameUITests.swift; sourceTree = "<group>"; };
 		DA588D4C1B46DAA800949829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA588D581B46EA5700949829 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				DA588D311B46DAA800949829 /* Assets.xcassets */,
 				DA588D331B46DAA800949829 /* LaunchScreen.storyboard */,
 				DA588D361B46DAA800949829 /* Info.plist */,
+				DA588D581B46EA5700949829 /* SecondViewController.swift */,
 			);
 			path = "mini game";
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA588D591B46EA5700949829 /* SecondViewController.swift in Sources */,
 				DA588D2D1B46DAA800949829 /* ViewController.swift in Sources */,
 				DA588D2B1B46DAA800949829 /* AppDelegate.swift in Sources */,
 			);
