@@ -28,16 +28,16 @@ class SecondViewController: UIViewController {
         switch taskSelected{
         case "clean":
             taskLabel.text = "Clean your \(selectedDino) dino!"
-            directionsLabel.text = "Two-finger swirl to clean your dino!"
+            directionsLabel.text = "Tap to clean your dino!"
         case "pet":
             taskLabel.text = "Pet your \(selectedDino) dino!"
-            directionsLabel.text = "Hold your finger on your dino to pet it!"
+            directionsLabel.text = "Tap to pet your dino!"
         default:
             taskLabel.text = "Feed your \(selectedDino) dino!"
             directionsLabel.text = "Tap to feed your dino!"
         }
     }
-    
+   /*
     @IBAction func dinoWasPetted(sender: UILongPressGestureRecognizer) {
         if(taskSelected == "pet"){
             if (CGRectContainsPoint(dinoPic.frame, sender.locationInView(backgroundView))){
@@ -57,7 +57,8 @@ class SecondViewController: UIViewController {
             }
         }
     }
-    
+    */
+    // or cleaned or petted
     @IBAction func dinoWasFed(sender: UITapGestureRecognizer) {
         if(taskSelected == "feed"){
             if (CGRectContainsPoint(dinoPic.frame, sender.locationInView(backgroundView))){
@@ -76,8 +77,43 @@ class SecondViewController: UIViewController {
                 }
             }
         }
+        else if(taskSelected == "clean"){
+            if (CGRectContainsPoint(dinoPic.frame, sender.locationInView(backgroundView))){
+                let randomNumber = Int(arc4random_uniform(4))
+                switch randomNumber {
+                case 0:
+                    taskLabel.text = "Rub a dub dub!"
+                case 1:
+                    taskLabel.text = "I WANT MY RUBBER DUCKY!!!"
+                case 2:
+                    taskLabel.text = "I'm sparkly now!"
+                case 3:
+                    taskLabel.text = "AHHHH! I got soap in my eyes!"
+                default:
+                    taskLabel.text = "You missed a spot"
+                }
+            }
+        }
+        else if(taskSelected == "pet"){
+            if (CGRectContainsPoint(dinoPic.frame, sender.locationInView(backgroundView))){
+                let randomNumber = Int(arc4random_uniform(4))
+                switch randomNumber {
+                case 0:
+                    taskLabel.text = "\(selectedDino) dino loves you too"
+                case 1:
+                    taskLabel.text = "that's the spot"
+                case 2:
+                    taskLabel.text = "\(selectedDino) dino wants you to try harder"
+                case 3:
+                    taskLabel.text = "RAWR!!! translation: \'I Love You\' in dinosaur"
+                default:
+                    taskLabel.text = "That's the best you can do?!"
+                }
+            }
+        }
+
     }
-    
+    /*
     @IBAction func dinoWasCleaned(sender: UIRotationGestureRecognizer) {
         if(taskSelected == "clean"){
             if (CGRectContainsPoint(dinoPic.frame, sender.locationInView(backgroundView))){
@@ -98,4 +134,5 @@ class SecondViewController: UIViewController {
         }
 
     }
+*/
 }
